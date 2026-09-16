@@ -1,0 +1,10 @@
+{% extends "core/base.html" %}
+{% block title %}Help and accessibility{% endblock %}
+{% block content %}
+<div class="page-shell">
+  <h1>Help and accessibility</h1>
+  <p>This pilot uses headings, lists, labelled controls, visible keyboard focus, and a single-column layout.</p>
+  <p>If a topic or activity is unavailable, use its return link to continue safely.</p>
+  <a class="button button-secondary" href="{% url 'core:topics' %}">Return to Topics</a>
+</div>
+{% endblock %}

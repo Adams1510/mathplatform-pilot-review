@@ -1,0 +1,13 @@
+{% extends "core/base.html" %}
+{% block title %}{{ activity_label }} — Integers{% endblock %}
+{% block content %}
+<div class="page-shell">
+  <a class="back-link" href="{% url 'core:integer-topic' %}">← Back to Integers</a>
+  <h1>{{ activity_label }}</h1>
+  <div class="state-message" role="status">
+    <h2>This activity is not available in this increment</h2>
+    <p>No questions, lesson material, answers, results, or progress have been opened. Return to the Integers overview to view the approved path.</p>
+  </div>
+  <a class="button" href="{% url 'core:integer-topic' %}">Return to Integers</a>
+</div>
+{% endblock %}

@@ -1,0 +1,50 @@
+{% extends "core/base.html" %}
+{% load static %}
+{% block title %}Synthetic state recovery check{% endblock %}
+{% block content %}
+<div class="page-shell synthetic-shell">
+  <a class="back-link" href="{% url 'core:integer-topic' %}">← Back to Integers</a>
+  <p class="eyebrow">Development fixture only</p>
+  <h1>Synthetic state recovery check</h1>
+  <div class="state-message privacy-boundary">
+    <h2>Synthetic values only</h2>
+    <p>This fixture cannot accept names, contact details, school information, learning answers, or other free text. It does not represent a diagnostic question.</p>
+  </div>
+
+  <form id="synthetic-state-form" method="post" action="{% url 'synthetic:save-state' %}" data-draft-key="synthetic-state-proof:{{ draft_scope }}" data-current-revision="{{ revision }}">
+    {% csrf_token %}
+    {{ form.operation_id }}
+    {{ form.base_revision }}
+    {{ form.content_version }}
+    {% if form.non_field_errors %}<div class="form-errors" role="alert">{{ form.non_field_errors }}</div>{% endif %}
+    <fieldset>
+      <legend>{{ form.value.label }}</legend>
+      <p>Choose one meaningless token to exercise save and recovery behavior.</p>
+      {{ form.value }}
+      {% if form.value.errors %}<div class="form-errors" role="alert">{{ form.value.errors }}</div>{% endif %}
+    </fieldset>
+    <button class="button" type="submit">Save synthetic state</button>
+  </form>
+
+  <p id="save-status" class="save-status" role="status" aria-live="polite">
+    {% if save_notice %}{{ save_notice }}{% elif saved_at %}Saved online at revision {{ revision }}.{% else %}No response saved online yet.{% endif %}
+  </p>
+  <button id="retry-save" class="button button-secondary" type="button" hidden>Retry save</button>
+
+  <div id="conflict-panel" class="state-message" role="alert" {% if not conflict %}hidden{% endif %} data-current-revision="{% if conflict %}{{ conflict.current_revision }}{% endif %}" data-current-value="{% if conflict %}{{ conflict.current_value }}{% endif %}">
+    <h2>Another tab saved a newer revision</h2>
+    <p>Your device copy has been kept. Choose which response to use; nothing is overwritten silently.</p>
+    <button id="use-server-response" class="button button-secondary" type="button">Use saved response</button>
+    <button id="save-device-response" class="button" type="button">Save this device response</button>
+  </div>
+
+  <section aria-labelledby="device-copy-heading">
+    <h2 id="device-copy-heading">Shared-device cleanup</h2>
+    <p>A pending copy is recoverability only. Clearing it does not delete a response already confirmed by the server.</p>
+    <button id="clear-local-draft" class="button button-secondary" type="button">Clear pending device copy</button>
+  </section>
+
+  <noscript><p>JavaScript is required only for automatic pending-device recovery. The form still saves online through a normal protected form submission.</p></noscript>
+</div>
+<script src="{% static 'core/synthetic-state.js' %}" defer></script>
+{% endblock %}

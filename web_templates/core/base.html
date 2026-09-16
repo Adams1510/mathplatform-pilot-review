@@ -1,0 +1,21 @@
+{% load static %}<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>{% block title %}Mathematics Learning Platform{% endblock %}</title>
+  <link rel="stylesheet" href="{% static 'core/app.css' %}">
+  <script src="{% static 'core/app.js' %}" defer></script>
+</head>
+<body>
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+  <header class="site-header">
+    <a class="brand" href="{% url 'core:home' %}">Mathematics Learning Platform</a>
+    <nav aria-label="Main navigation">
+      <a href="{% url 'core:topics' %}">Topics</a>
+      <a href="{% url 'core:accessibility-help' %}">Help and accessibility</a>
+    </nav>
+  </header>
+  <main id="main-content" tabindex="-1">{% block content %}{% endblock %}</main>
+</body>
+</html>

@@ -1,0 +1,10 @@
+{
+  "name": "math-platform-m1-integers-browser-tests",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Pinned accessibility test asset for the bounded M1 Integers pilot",
+  "license": "UNLICENSED",
+  "devDependencies": {
+    "axe-core": "4.12.1"
+  }
+}

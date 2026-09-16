@@ -1,0 +1,30 @@
+# Local environments and runtime state
+.venv/
+.uv-cache/
+review.sqlite3
+review.sqlite3-*
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.ruff_cache/
+.coverage
+htmlcov/
+staticfiles/
+node_modules/
+
+# Local configuration and secrets
+.env
+.env.*
+!.env.example
+
+# Browser and test output
+test-results/
+playwright-report/
+*.log
+
+# Never add controlled or private material
+content_quarantine/
+private/
+controlled-content/
+*.pem
+*.key

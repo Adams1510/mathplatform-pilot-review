@@ -1,0 +1,45 @@
+{% extends "core/base.html" %}
+{% block title %}Synthetic mathematics accessibility probe{% endblock %}
+{% block content %}
+<div class="page-shell synthetic-shell">
+  <p class="eyebrow">Development fixture only</p>
+  <h1>Synthetic mathematics accessibility probe</h1>
+  <div class="state-message privacy-boundary">
+    <h2>No diagnostic content or collection</h2>
+    <p>This production-disabled fixture uses unrelated synthetic values. It is not a diagnostic question, accepts no free text, sends no response, and stores nothing.</p>
+  </div>
+
+  <section aria-labelledby="expression-heading">
+    <h2 id="expression-heading">Structured expression</h2>
+    <math aria-label="Three plus two equals five">
+      <mrow><mn>3</mn><mo>+</mo><mn>2</mn><mo>=</mo><mn>5</mn></mrow>
+    </math>
+    <p>
+      <button class="disclosure-button" type="button" aria-expanded="false" aria-controls="linear-expression">Read expression as text</button>
+    </p>
+    <p id="linear-expression" hidden>Three plus two equals five.</p>
+  </section>
+
+  <section aria-labelledby="spatial-heading">
+    <h2 id="spatial-heading">Spatial alternative</h2>
+    <svg class="synthetic-number-line" viewBox="0 0 600 120" role="img" aria-hidden="true" focusable="false">
+      <line x1="80" y1="48" x2="520" y2="48"></line>
+      <line x1="120" y1="32" x2="120" y2="64"></line>
+      <line x1="300" y1="32" x2="300" y2="64"></line>
+      <line x1="480" y1="32" x2="480" y2="64"></line>
+      <circle cx="300" cy="48" r="9"></circle>
+      <text x="102" y="92">−101</text>
+      <text x="294" y="92">0</text>
+      <text x="462" y="92">101</text>
+    </svg>
+    <p id="ordered-positions">Ordered positions from left to right: minus one hundred one, zero, one hundred one. The middle marker is at zero.</p>
+    <fieldset aria-describedby="ordered-positions storage-status">
+      <legend>Choose the middle position in this synthetic layout.</legend>
+      <label><input type="radio" name="synthetic-position" value="minus-101"> Minus one hundred one</label>
+      <label><input type="radio" name="synthetic-position" value="zero"> Zero</label>
+      <label><input type="radio" name="synthetic-position" value="101"> One hundred one</label>
+    </fieldset>
+    <p id="storage-status" role="status">This choice is not submitted or stored.</p>
+  </section>
+</div>
+{% endblock %}

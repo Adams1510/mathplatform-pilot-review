@@ -1,0 +1,62 @@
+# Package manifest
+
+This is the complete shareable-file inventory created for the senior-coder review package. Runtime files and dependency caches are excluded and ignored.
+
+- `PACKAGE-MANIFEST.md`
+
+- `config/asgi.py`
+- `config/__init__.py`
+- `config/settings/base.py`
+- `config/settings/__init__.py`
+- `config/settings/review.py`
+- `config/settings/test.py`
+- `config/urls.py`
+- `config/wsgi.py`
+- `content_manifest/releases/m1-integers-entry-v1.0.json`
+- `content_manifest/schema-v1.0.json`
+- `core/apps.py`
+- `core/checks.py`
+- `core/forms.py`
+- `core/__init__.py`
+- `core/management/commands/__init__.py`
+- `core/management/commands/purge_synthetic_state.py`
+- `core/management/__init__.py`
+- `core/middleware.py`
+- `core/migrations/0001_initial.py`
+- `core/migrations/__init__.py`
+- `core/models.py`
+- `core/state_service.py`
+- `core/static/core/app.css`
+- `core/static/core/app.js`
+- `core/static/core/synthetic-state.js`
+- `core/synthetic_urls.py`
+- `core/synthetic_views.py`
+- `core/topic_manifest.py`
+- `core/urls.py`
+- `core/views.py`
+- `.env.example`
+- `FINDINGS-TEMPLATE.md`
+- `.gitignore`
+- `HANDOFF-REPORT.md`
+- `manage.py`
+- `package.json`
+- `package-lock.json`
+- `pyproject.toml`
+- `README.md`
+- `SENIOR-CODER-CHECKLIST.md`
+- `tests/__init__.py`
+- `tests/test_operational_foundation.py`
+- `tests/test_synthetic_state_browser.py`
+- `tests/test_synthetic_state.py`
+- `tests/test_topic_entry_browser.py`
+- `tests/test_topic_entry.py`
+- `uv.lock`
+- `web_templates/core/accessibility_help.html`
+- `web_templates/core/base.html`
+- `web_templates/core/controlled_activity.html`
+- `web_templates/core/home.html`
+- `web_templates/core/integer_topic_entry.html`
+- `web_templates/core/readiness_proof.html`
+- `web_templates/core/synthetic_math_probe.html`
+- `web_templates/core/synthetic_state.html`
+- `web_templates/core/topics.html`

@@ -1,0 +1,13 @@
+{% extends "core/base.html" %}
+{% block title %}Topics — Mathematics Learning Platform{% endblock %}
+{% block content %}
+<div class="page-shell">
+  <h1>Topics</h1>
+  <section aria-labelledby="m1-heading">
+    <h2 id="m1-heading">M1 Mathematics</h2>
+    <ul class="topic-list">
+      <li><a class="topic-card" href="{% url 'core:integer-topic' %}"><strong>Integers</strong><span>Open the topic overview</span></a></li>
+    </ul>
+  </section>
+</div>
+{% endblock %}

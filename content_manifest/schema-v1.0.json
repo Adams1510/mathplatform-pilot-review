@@ -1,0 +1,40 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://math-platform.invalid/schemas/topic-entry-manifest-v1.0.json",
+  "title": "M1 topic-entry metadata manifest",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schema_version", "release_id", "educational_bodies_included", "topic"],
+  "properties": {
+    "schema_version": {"const": "1.0"},
+    "release_id": {"type": "string", "minLength": 1},
+    "educational_bodies_included": {"const": false},
+    "topic": {
+      "type": ["object", "null"],
+      "required": ["slug", "grade_label", "title", "orientation", "outcomes", "activities"],
+      "properties": {
+        "slug": {"type": "string", "minLength": 1},
+        "grade_label": {"type": "string", "minLength": 1},
+        "title": {"type": "string", "minLength": 1},
+        "orientation": {"type": "string", "minLength": 1},
+        "outcomes": {"type": "array", "minItems": 4, "maxItems": 4, "items": {"type": "string", "minLength": 1}},
+        "activities": {
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": ["sequence_position", "label", "resource_id", "published_version", "rendering_authorized"],
+            "properties": {
+              "sequence_position": {"type": "integer", "minimum": 1},
+              "label": {"type": "string", "minLength": 1},
+              "resource_id": {"type": "string", "minLength": 1},
+              "published_version": {"const": "v1.0"},
+              "rendering_authorized": {"const": false}
+            }
+          }
+        }
+      }
+    }
+  }
+}

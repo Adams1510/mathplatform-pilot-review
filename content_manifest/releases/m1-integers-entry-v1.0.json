@@ -1,0 +1,27 @@
+{
+  "schema_version": "1.0",
+  "release_id": "m1-integers-entry-v1.0",
+  "educational_bodies_included": false,
+  "topic": {
+    "slug": "m1-integers",
+    "grade_label": "M1 Mathematics",
+    "title": "Integers",
+    "orientation": "Learn how positive and negative whole numbers describe position, change, and calculations.",
+    "outcomes": [
+      "Understand integers, number lines, and opposites.",
+      "Add and subtract positive and negative numbers.",
+      "Multiply and divide integers using sign reasoning.",
+      "Work through combined operations and check whether answers make sense."
+    ],
+    "activities": [
+      {"sequence_position": 1, "label": "Check where to start", "resource_id": "MLP-G07-NUM-INTEGERS-DIAG-001", "published_version": "v1.0", "rendering_authorized": false},
+      {"sequence_position": 2, "label": "1. Integer concepts", "resource_id": "MLP-G07-NUM-INTEGERS-PRES-005", "published_version": "v1.0", "rendering_authorized": false},
+      {"sequence_position": 3, "label": "2. Addition and subtraction", "resource_id": "MLP-G07-NUM-INTEGERS-PRES-006", "published_version": "v1.0", "rendering_authorized": false},
+      {"sequence_position": 4, "label": "3. Multiplication and division", "resource_id": "MLP-G07-NUM-INTEGERS-PRES-007", "published_version": "v1.0", "rendering_authorized": false},
+      {"sequence_position": 5, "label": "4. Combined operations and checking", "resource_id": "MLP-G07-NUM-INTEGERS-PRES-008", "published_version": "v1.0", "rendering_authorized": false},
+      {"sequence_position": 6, "label": "Practise", "resource_id": "MLP-G07-NUM-INTEGERS-WS-001", "published_version": "v1.0", "rendering_authorized": false},
+      {"sequence_position": 7, "label": "Revise", "resource_id": "MLP-G07-NUM-INTEGERS-REV-001", "published_version": "v1.0", "rendering_authorized": false},
+      {"sequence_position": 8, "label": "Topic assessment", "resource_id": "MLP-G07-NUM-INTEGERS-ASMT-001", "published_version": "v1.0", "rendering_authorized": false}
+    ]
+  }
+}

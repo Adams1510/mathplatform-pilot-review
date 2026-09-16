@@ -1,0 +1,10 @@
+{% extends "core/base.html" %}
+{% block title %}Home — Mathematics Learning Platform{% endblock %}
+{% block content %}
+<div class="page-shell">
+  <p class="eyebrow">M1 Mathematics pilot</p>
+  <h1>Choose what to learn</h1>
+  <p>Start with the approved M1 topic available in this controlled pilot.</p>
+  <a class="button" href="{% url 'core:topics' %}">Browse topics</a>
+</div>
+{% endblock %}

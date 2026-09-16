@@ -1,0 +1,57 @@
+[project]
+name = "math-platform-m1-integers-pilot"
+version = "0.0.0"
+description = "Bounded M1 Integers interactive pilot"
+requires-python = "==3.13.*"
+dependencies = [
+    "django>=5.2,<5.3",
+    "gunicorn>=23,<24",
+    "psycopg[binary]>=3.2,<4",
+]
+
+[dependency-groups]
+dev = [
+    "coverage[toml]>=7,<8",
+    "cyclonedx-bom>=7,<8",
+    "pip-audit>=2.9,<3",
+    "pytest>=9,<10",
+    "pytest-django>=4.11,<5",
+    "pytest-playwright>=0.7,<1",
+    "ruff>=0.12,<1",
+]
+
+[tool.uv]
+package = false
+
+[tool.pytest.ini_options]
+DJANGO_SETTINGS_MODULE = "config.settings.test"
+addopts = "--strict-config --strict-markers -ra"
+python_files = ["test_*.py", "*_test.py"]
+testpaths = ["tests"]
+markers = ["browser: Edge/Chromium browser checks requiring RUN_BROWSER_TESTS=1"]
+
+[tool.coverage.run]
+branch = true
+source = ["config", "core"]
+omit = [
+    "config/asgi.py",
+    "config/wsgi.py",
+    "config/settings/review.py",
+]
+
+[tool.coverage.report]
+fail_under = 85
+show_missing = true
+skip_covered = true
+
+[tool.ruff]
+line-length = 100
+target-version = "py313"
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "N", "S", "UP"]
+ignore = ["S101"]
+
+[tool.ruff.lint.per-file-ignores]
+"config/settings/*.py" = ["F403", "F405", "S105"]
+"tests/**/*.py" = ["S105", "S106"]
